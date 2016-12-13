@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/wap.css">
 </head>
-
-<body>
+<!-- 指定模块管理的区域 -->
+<body ng-app="moviecat">
     <!-- 顶部导航栏开始 -->
     <div class="top">
         <div class="header">
@@ -29,16 +29,10 @@
         </nav>
     </div>
     <!-- 顶部导航栏结束 -->
-
-
     <div class="container">
         
-        <!-- 首页开始 -->
-        <div class="list">
-            <!-- 首页就是一张图片 -->
-            <img src="assets/img/home_page.png" alt="">
-        </div>
-        <!-- 首页结束 -->
+        <!-- 单页应用程序中，首页、列表页、详情页展示的位置 -->
+       <div ng-view></div>
 
         <!--电影列表开始-->
         <div class="list">
@@ -179,7 +173,12 @@
 
     <!-- 自动补全C3样式的前缀 -->
     <script src="assets/js/prefixfree.min.js"></script>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
     <script src="app.js"></script>
+
+    <!-- 引入home模块的js文件 -->
+    <script src="home/module.js"></script>
 </body>
 
 </html>
